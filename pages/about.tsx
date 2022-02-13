@@ -17,16 +17,7 @@ export default function About() {
       <Head>
         <title>Hellooooo</title>
       </Head>
-      <section>
-        <video
-          ref={videoRef}
-          data-html5-video=""
-          preload="metadata"
-          playsInline
-          src="blob:http://givemenbastreams.com/4ec0bce3-114d-4ce6-867e-63560e59551f"
-        ></video>
-        <Button onClick={handleClick}>Play!</Button>
-      </section>
+      <Button onClick={handleClick}>Play!</Button>
     </Layout>
   );
 }
