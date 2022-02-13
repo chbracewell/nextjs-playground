@@ -1,9 +1,13 @@
-import { Typography } from "@mui/material";
+import ArrowBackIosNewIcon from "@mui/icons-material/ArrowBackIosNew";
+import Button from "@mui/material/Button";
+import { Box } from "@mui/system";
 import { GetStaticPaths, GetStaticProps } from "next";
 import Head from "next/head";
+import Link from "next/link";
 import Date from "../../components/date";
 import Layout from "../../components/layout";
 import { getAllPostIds, getPostData } from "../../lib/posts";
+import utilStyles from "../../styles/utils.module.css";
 
 export default function Post({
   postData,
@@ -20,14 +24,19 @@ export default function Post({
         <title>{postData.title}</title>
       </Head>
       <article>
-        <Typography component="h1" variant="h3">
-          {postData.title}
-        </Typography>
-        <Typography variant="caption">
+        <h1 className={utilStyles.headingXl}>{postData.title}</h1>
+        <div className={utilStyles.lightText}>
           <Date dateString={postData.date} />
-        </Typography>
+        </div>
         <div dangerouslySetInnerHTML={{ __html: postData.contentHtml }} />
       </article>
+      <Box my={3}>
+        <Link href="/" passHref>
+          <Button variant="contained" startIcon={<ArrowBackIosNewIcon />}>
+            Back
+          </Button>
+        </Link>
+      </Box>
     </Layout>
   );
 }

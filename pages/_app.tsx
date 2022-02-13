@@ -1,3 +1,4 @@
+import { CssBaseline } from "@mui/material";
 import { AppProps } from "next/app";
 import Head from "next/head";
 import "../styles/global.css";
@@ -5,8 +6,9 @@ import "../styles/global.css";
 const App = ({ Component, pageProps }: AppProps) => {
   return (
     <>
+      <CssBaseline />
       <Head>
-        <title>Hello!</title>
+        <title>Playground</title>
         <meta
           name="viewport"
           content="minimum-scale=1, initial-scale=1, width=device-width"
